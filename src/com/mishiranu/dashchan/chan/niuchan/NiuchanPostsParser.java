@@ -59,13 +59,15 @@ public class NiuchanPostsParser implements GroupParser.Callback
 	static
 	{
 		TimeZone timeZone = TimeZone.getTimeZone("Europe/Rome");
-		DATE_FORMATS = new SimpleDateFormat[3];
+		DATE_FORMATS = new SimpleDateFormat[4];
 		DATE_FORMATS[0] = new SimpleDateFormat("yy/dd/MM(EEE)hh:mm", Locale.ITALY);
 		DATE_FORMATS[0].setTimeZone(timeZone);
 		DATE_FORMATS[1] = new SimpleDateFormat("(EEE) dd/MM/yyyy hh:mm", Locale.ITALY);
 		DATE_FORMATS[1].setTimeZone(timeZone);
 		DATE_FORMATS[2] = new SimpleDateFormat("yy/dd/MM(EEE)hh:mm", Locale.US);
 		DATE_FORMATS[2].setTimeZone(timeZone);
+		DATE_FORMATS[3] = new SimpleDateFormat("dd/MM/yy (EEE) hh:mm", Locale.US);
+		DATE_FORMATS[3].setTimeZone(timeZone);
 	}
 	
 	private static final Pattern FILE_SIZE = Pattern.compile("\\(([\\d\\.]+) ?(\\w+)(?: *, *(\\d+)x(\\d+))?" +
